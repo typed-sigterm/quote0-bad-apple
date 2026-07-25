@@ -1,0 +1,17 @@
+[package]
+name = "quote0-bad-apple-host"
+version = "0.0.0"
+edition = "2024"
+description = "Play Bad Apple on MindReset Quote/0 e-ink display."
+publish = false
+
+[[bin]]
+name = "quote0-bad-apple-host"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4", features = ["cargo", "derive"] }
+indicatif = "0.18"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+tracing-indicatif = "0.3"

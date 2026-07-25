@@ -1,0 +1,49 @@
+[package]
+name = "quote0-bad-apple-firmware"
+version = "0.0.0"
+edition = "2024"
+rust-version = "1.94"
+publish = false
+
+[[bin]]
+name = "quote0-bad-apple-firmware"
+path = "./src/main.rs"
+
+[dependencies]
+esp-hal = { version = "~1.0", features = ["esp32c3", "unstable"] }
+
+esp-rtos = { version = "0.2.0", features = [
+  "esp-alloc",
+  "esp-radio",
+  "esp32c3",
+] }
+
+esp-bootloader-esp-idf = { version = "0.4.0", features = ["esp32c3"] }
+
+esp-println = { version = "0.16", default-features = false, features = [
+  "esp32c3",
+  "jtag-serial",
+  "critical-section",
+] }
+
+critical-section = "1.2.0"
+esp-alloc = "0.9.0"
+esp-radio = { version = "0.17.0", features = [
+  "esp-alloc",
+  "esp32c3",
+  "smoltcp",
+  "unstable",
+  "wifi",
+] }
+smoltcp = { version = "0.12.0", default-features = false, features = [
+  "alloc",
+  "medium-ethernet",
+  "multicast",
+  "proto-dhcpv4",
+  "proto-ipv4",
+  "socket-dhcpv4",
+  "socket-icmp",
+  "socket-raw",
+  "socket-tcp",
+  "socket-udp",
+] }
